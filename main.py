@@ -17,16 +17,16 @@ def get_fact():
     return facts[0].getText()
 
 
-def post_pig_lat(post):
+def post_pig_lat(rand_post):
     response = requests.post("http://hidden-journey-62459.herokuapp.com/piglatinize/",
-                             data={'input_text': post}, allow_redirects=False)  # , headers = header)
-    print(response.headers)
+                             data={'input_text': rand_post}, allow_redirects=False)
     return response.text
 
 
 @app.route('/')
 def home():
-    return post_pig_lat(get_fact())
+    fact = get_fact()
+    return post_pig_lat(fact)
 
 
 if __name__ == "__main__":
