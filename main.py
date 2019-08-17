@@ -19,7 +19,7 @@ def get_fact():
 
 def post_pig_lat(rand_post):
     response = requests.post("http://hidden-journey-62459.herokuapp.com/piglatinize/",
-                             data={'input_text': rand_post}, allow_redirects=True)
+                             data={'input_text': rand_post}, allow_redirects=False)
     return response.text
 
 
