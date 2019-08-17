@@ -18,12 +18,11 @@ def get_fact():
 
 
 def post_pig_lat(rand_post):
-    response = requests.post(data={'input_text': rand_post}, allow_redirects=False)
+    response = requests.post(data={'input_text': rand_post}, allow_redirects=True)
     # soup = BeautifulSoup(response.content, "html.parser")
     # content = soup.find_all("a", href="/")
     # return content  # response.text
-    new_link = "http://hidden-journey-62459.herokuapp.com/piglatinize/"+response.text
-    return new_link
+    return response.text
 
 
 @app.route('/')
