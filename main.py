@@ -25,8 +25,8 @@ def post_pig_lat(rand_post):
 
 @app.route('/')
 def home():
-    fact = get_fact()
-    return post_pig_lat(fact)
+    # fact = get_fact()
+    return post_pig_lat(get_fact())
 
 
 if __name__ == "__main__":
